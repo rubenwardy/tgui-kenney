@@ -105,6 +105,7 @@ def parse(input, output, sheet):
 
 if __name__ == "__main__":
 	INPUT_FILE = "kenney.source"
-	OUTPUT_FILE = "kenney.style"
-	OUTPUT_SHEET = "kenney.png"
+	os.mkdir("build")
+	OUTPUT_FILE = "build/kenney.style"
+	OUTPUT_SHEET = "build/kenney.png"
 	parse(INPUT_FILE, OUTPUT_FILE, OUTPUT_SHEET)
