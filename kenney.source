@@ -3,7 +3,7 @@ Button {
 	TextureHover    = $blue_button01:5;
 	TextureDown     = $blue_button03:5;
 	TextureFocused  = $blue_button01:5;
-	TextureDisabled = $grey_button05:%;
+	TextureDisabled = $grey_button05:5;
 	TextColor       = rgb(250, 250, 250);
 	TextColorDisabled = rgb(100, 100, 100);
 }

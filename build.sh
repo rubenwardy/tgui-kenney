@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source env/bin/activate
-python pack.py
+python pack.py kenney.source
 mv ui.png build/
 
 pushd build || exit 1

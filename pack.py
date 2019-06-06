@@ -70,6 +70,7 @@ class Sprite:
 
 def parse(input, output, sheet):
 	sheet_no_ext = os.path.splitext(sheet)[0]
+	sheet_filename = os.path.basename(sheet)
 
 	sprites = {}
 	paths = {}
@@ -97,15 +98,23 @@ def parse(input, output, sheet):
 
 	for sprite in sprites.values():
 		loc = locations[sprite.path]
-		content = content.replace(sprite.key, sprite.getSpec(sheet, loc[0], loc[1], loc[2], loc[3]))
+		content = content.replace(sprite.key, sprite.getSpec(sheet_filename, loc[0], loc[1], loc[2], loc[3]))
 
 	with open(output, "w") as f:
 		f.write(content)
 
 
 if __name__ == "__main__":
-	INPUT_FILE = "kenney.source"
-	os.mkdir("build")
-	OUTPUT_FILE = "build/kenney.style"
-	OUTPUT_SHEET = "build/kenney.png"
-	parse(INPUT_FILE, OUTPUT_FILE, OUTPUT_SHEET)
+	if len(sys.argv) != 2:
+		print("USAGE: python pack.py path/to/file.source")
+		sys.exit(1)
+
+	input = sys.argv[1]
+	input_name = os.path.splitext(input)[0]
+
+	if not os.path.isdir("build"):
+		os.mkdir("build")
+
+	output = "build/" + input_name + ".style"
+	sheet = "build/" + input_name + ".png"
+	parse(input, output, sheet)
