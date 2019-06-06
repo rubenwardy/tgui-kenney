@@ -1,5 +1,9 @@
 #!/bin/bash
 
+source env/bin/activate
+python pack.py
+mv ui.png build/
+
 pushd build || exit 1
 
 rm *.plist
