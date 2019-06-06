@@ -1,9 +1,9 @@
 Button {
-	Texture         = "blueSheet.png" Part(0, 94, 190, 49) Middle(10, 10, 170, 29);
-	TextureHover    = "blueSheet.png" Part(190, 49, 190, 45) Middle(10, 10, 170, 25);
-	TextureDown     = "blueSheet.png" Part(0, 49, 190, 45) Middle(10, 10, 170, 25);
-	TextureFocused  = "blueSheet.png" Part(190, 49, 190, 45) Middle(10, 10, 170, 25);
-	TextureDisabled = "greySheet.png" Part(0, 0, 190, 49) Middle(10, 10, 170, 29);
+	Texture         = $blue_button00:5;
+	TextureHover    = $blue_button01:5;
+	TextureDown     = $blue_button03:5;
+	TextureFocused  = $blue_button01:5;
+	TextureDisabled = $grey_button05:%;
 	TextColor       = rgb(250, 250, 250);
 	TextColorDisabled = rgb(100, 100, 100);
 }
@@ -15,16 +15,17 @@ ChatBox {
 }
 
 Checkbox {
-	TextureUnchecked        = "greySheet.png" Part(147, 433, 38, 36);
-	TextureChecked          = "blueSheet.png" Part(380, 36, 38, 36);
+	TextureUnchecked        = $grey_box;
+	TextureChecked          = $blue_boxCheckmark;
 	TextColor               = rgb(100, 100, 100);
 	TextColorHover          = Black;
 }
 
 ChildWindow {
-	TextureTitlebar        = "blueSheet.png" Part(0, 192, 190, 40) Middle(10, 10, 170, 30);
+	TextureTitlebar        = $blue_button05:5;
 	TitleColor             = White;
-	TextureBackground      = "greySheet.png" Part(190, 103, 100, 95) Middle(5, 0, 90, 90);    BorderColor            = Black;
+	TextureBackground      = $grey_panel:10;
+	BorderColor            = Black;
 	DistanceToSide         = 5;
 	PaddingBetweenButtons  = 2;
 	ShowTextOnTitleButtons = false;
@@ -55,9 +56,9 @@ ComboBox {
 }
 
 EditBox {
-	Texture        = "greySheet.png" Part(0, 49, 191, 49) Middle(10, 10, 171, 29);
-	TextureHover   = "greySheet.png" Part(0, 0, 195, 49) Middle(10, 10, 175, 29);
-	TextureFocused = "greySheet.png" Part(0, 0, 195, 49) Middle(10, 10, 175, 29);
+	Texture        = $grey_button06:5;
+	TextureHover   = $grey_button05:5;
+	TextureFocused = $grey_button05:5;
 
 	TextColor                   = rgb(100, 100, 100);
 	SelectedTextColor           = White;
@@ -73,7 +74,7 @@ Label {
 }
 
 ListBox {
-	TextureBackground = "greySheet.png" Part(190, 98, 100, 100) Middle(5, 5, 90, 90);
+	TextureBackground = $grey_panel:10;
 
 	TextColor                    = rgb(100, 100, 100);
 	TextColorHover               = rgb(250, 250, 250);
@@ -123,7 +124,7 @@ MessageBox {
 }
 
 Panel {
-	TextureBackground = "greySheet.png" Part(190, 98, 100, 100) Middle(5, 5, 90, 90);
+	TextureBackground = $grey_panel:10;
 }
 
 ProgressBar {
