@@ -63,7 +63,7 @@ class Sprite:
 		p = self.padding
 		spec = "\"{}\" Part({}, {}, {}, {})".format(file, x, y, w, h)
 		if self.padding is not None:
-			spec += " Middle({}, {}, {}, {})".format(x + p, y + p, w - p*2, h - p*2)
+			spec += " Middle({}, {}, {}, {})".format(p, p, w - p*2, h - p*2)
 
 		return spec
 

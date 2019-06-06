@@ -1,9 +1,9 @@
 Button {
-	Texture         = $blue_button00:5;
-	TextureHover    = $blue_button01:5;
-	TextureDown     = $blue_button03:5;
-	TextureFocused  = $blue_button01:5;
-	TextureDisabled = $grey_button05:5;
+	Texture         = $blue_button00:10;
+	TextureHover    = $blue_button01:10;
+	TextureDown     = $blue_button03:10;
+	TextureFocused  = $blue_button01:10;
+	TextureDisabled = $grey_button05:10;
 	TextColor       = rgb(250, 250, 250);
 	TextColorDisabled = rgb(100, 100, 100);
 }
@@ -22,7 +22,7 @@ Checkbox {
 }
 
 ChildWindow {
-	TextureTitlebar        = $blue_button05:5;
+	TextureTitlebar        = $blue_button05:10;
 	TitleColor             = White;
 	TextureBackground      = $grey_panel:10;
 	BorderColor            = Black;
@@ -56,9 +56,9 @@ ComboBox {
 }
 
 EditBox {
-	Texture        = $grey_button06:5;
-	TextureHover   = $grey_button05:5;
-	TextureFocused = $grey_button05:5;
+	Texture        = $grey_button06:10;
+	TextureHover   = $grey_button05:10;
+	TextureFocused = $grey_button05:10;
 
 	TextColor                   = rgb(100, 100, 100);
 	SelectedTextColor           = White;
@@ -194,4 +194,9 @@ ToolTip {
 	BorderColor     = Black;
 	Borders         = (1, 1, 1, 1);
 	Padding         = (2, 2, 2, 2);
+}
+
+ItemSlot {
+	BackgroundColor = rgba(255, 255, 255, 0);
+	BackgroundColorHover = rgba(255, 255, 255, 50);
 }
