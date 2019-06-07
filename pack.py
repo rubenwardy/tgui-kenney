@@ -84,12 +84,12 @@ def parse(input, output, sheet):
 			content = content.replace("#include \"" + filename + "\"", f.read())
 
 	packer = Packer.create(packer_type=CustomPacker, max_width=2048, max_height=2048, bg_color=0x00ffffff, enable_rotated=False)
-	for name, padding in re.findall(r"\$([A-Za-z0-9_]+)(\:[0-9]+)?", content):
+	for name, padding in re.findall(r"\$\{([A-Za-z0-9_]+)(\:[0-9]+)?\}", content):
 		if sprites.get(name) is not None:
 			continue
 
 		try:
-			key = "$" + name + padding
+			key = "${" + name + padding + "}"
 			sprite = Sprite(key, name, padding[1:])
 			sprites[key] = sprite
 			paths[sprite.path] = True

@@ -2,7 +2,7 @@
 
 By rubenwardy, based on a theme by texus.
 
-T-GUI Theme License: Zlib \\
+T-GUI Theme License: Zlib<br>
 Kenney UI Pack license: CC-0
 
 ## Building
