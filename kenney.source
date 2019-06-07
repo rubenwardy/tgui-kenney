@@ -22,9 +22,9 @@ Checkbox {
 }
 
 ChildWindow {
-	TextureTitlebar        = ${blue_button05:10+0+10};
+	TextureTitlebar        = ${blue_button05:10o-10};
 	TitleColor             = White;
-	TextureBackground      = ${grey_panel} Middle(5, 0, 90, 90);
+	TextureBackground      = ${grey_panel:10o+10};
 	BorderColor            = Black;
 	DistanceToSide         = 5;
 	PaddingBetweenButtons  = 2;

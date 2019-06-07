@@ -50,23 +50,35 @@ class CustomPacker(MaxRectsPacker):
 
 
 class Sprite:
-	def __init__(self, key, name, padding, ox, oy):
+	def __init__(self, key, name, padding, oy):
 		self.name    = name
 		self.key     = key
 		self.path    = "resources/" + name + ".png"
-		self.padding = int(padding) if padding and padding != "" else None
-		self.offset  = (int(ox), int(oy)) if ox and oy else (0, 0)
+		self.padding = int(padding) if padding and padding != "" else 0
+		self.offset  = int(oy) if oy else 0
 
 		im = Image.open(self.path)
 		self.width, self.height = im.size
 
 	def getSpec(self, file, x, y, w, h):
 		p = self.padding
-		ox, oy = self.offset
+		ix, iy = p, p
+		iw, ih = w - 2*p, h - 2*p
+
+		if p:
+			oy = self.offset
+			if oy > 0:
+				y += oy
+				h -= oy
+				iy -= oy
+				ih -= oy
+			elif oy < 0:
+				h += oy
+				ih = min(ih, h - iy)
 
 		spec = "\"{}\" Part({}, {}, {}, {})".format(file, x, y, w, h)
 		if self.padding is not None:
-			spec += " Middle({}, {}, {}, {})".format(p + ox, p + oy, w - p*2, h - p*2)
+			spec += " Middle({}, {}, {}, {})".format(ix, iy, iw, ih)
 
 		return spec
 
@@ -87,13 +99,13 @@ def parse(input, output, sheet):
 			content = content.replace("#include \"" + filename + "\"", f.read())
 
 	packer = Packer.create(packer_type=CustomPacker, max_width=2048, max_height=2048, bg_color=0x00ffffff, enable_rotated=False)
-	for name, padding, ox, oy in re.findall(r"\$\{([A-Za-z0-9_]+)(\:[0-9]+)?([+-][0-9]+)?([+-][0-9]+)?\}", content):
+	for name, padding, ox in re.findall(r"\$\{([A-Za-z0-9_]+)(\:[0-9]+)?(o[+-][0-9]+)?\}", content):
 		if sprites.get(name) is not None:
 			continue
 
 		try:
-			key = "${" + name + padding + ox + oy + "}"
-			sprite = Sprite(key, name, padding[1:], ox, oy)
+			key = "${" + name + padding + ox + "}"
+			sprite = Sprite(key, name, padding[1:], ox[1:])
 			sprites[key] = sprite
 			paths[sprite.path] = True
 		except FileNotFoundError:
