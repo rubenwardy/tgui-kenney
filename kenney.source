@@ -9,7 +9,7 @@ Button {
 }
 
 ChatBox {
-	TextureBackground = "ui.png" Part(0, 154, 48, 48) Middle(16, 16, 16, 16);
+	TextureBackground = $blue_button05:10;
 	Scrollbar         = &Scrollbar;
 	Padding           = (3, 3, 3, 3);
 }
@@ -30,26 +30,14 @@ ChildWindow {
 	PaddingBetweenButtons  = 2;
 	ShowTextOnTitleButtons = false;
 	CloseButton = {
-		Texture       = "ui.png" Part(48, 179, 15, 15);
-		TextureHover  = "ui.png" Part(63, 179, 15, 15);
-		TextureDown   = "ui.png" Part(78, 179, 15, 15);
-	};
-	MaximizeButton = {
-		Texture       = "ui.png" Part(48, 194, 15, 15);
-		TextureHover  = "ui.png" Part(63, 194, 15, 15);
-		TextureDown   = "ui.png" Part(78, 194, 15, 15);
-	};
-	MinimizeButton = {
-		Texture       = "ui.png" Part(93, 194, 15, 15);
-		TextureHover  = "ui.png" Part(108, 194, 15, 15);
-		TextureDown   = "ui.png" Part(123, 194, 15, 15);
+		Texture       = $red_cross;
 	};
 }
 
 ComboBox {
-	TextureBackground     = "ui.png" Part(0, 154, 48, 48) Middle(16, 16, 16, 16);
-	TextureArrow          = "ui.png" Part(60,  0, 32, 32);
-	TextureArrowHover     = "ui.png" Part(60, 32, 32, 32);
+	TextureBackground     = $blue_button00:10;
+	TextureArrow          = $grey_arrowDownGrey;
+	TextureArrowHover     = $grey_arrowDownWhite;
 	TextColor             = rgb(190, 190, 190);
 	Padding               = (3, 3, 3, 3);
 	ListBox               = &ListBox;
@@ -98,9 +86,9 @@ ListView {
 }
 
 MenuBar {
-	TextureBackground             = "ui.png" Part(115, 179, 8, 6) Middle(2, 2, 4, 2);
-	TextureItemBackground         = "ui.png" Part(115, 181, 8, 4) Middle(2, 0, 4, 2);
-	TextureSelectedItemBackground = "ui.png" Part(115, 185, 8, 6) Middle(2, 2, 4, 2);
+	TextureBackground             = $blue_button00:10;
+	TextureItemBackground         = $blue_button00:10;
+	TextureSelectedItemBackground = $blue_button00:10;
 	TextColor                     = rgb(190, 190, 190);
 	SelectedTextColor             = White;
 	DistanceToSide                = 5;
@@ -110,17 +98,15 @@ MessageBox {
 	TextColor       = rgb(190, 190, 190);
 	Button          = &Button;
 
-	TextureTitlebar = "ui.png" Part(48, 154, 75, 25) Middle(25, 0, 25, 25);
+	TextureTitlebar = $blue_button05:10;
 	TitleColor      = rgb(190, 190, 190);
 	BackgroundColor = rgb( 80,  80,  80);
 	BorderColor     = Black;
 	Borders         = (1, 1, 1, 1);
 	DistanceToSide  = 5;
 	CloseButton     = {
-						Texture       = "ui.png" Part(48, 179, 15, 15);
-						TextureHover  = "ui.png" Part(63, 179, 15, 15);
-						TextureDown   = "ui.png" Part(78, 179, 15, 15);
-					  };
+		Texture = $red_cross;
+	};
 }
 
 Panel {
@@ -128,58 +114,58 @@ Panel {
 }
 
 ProgressBar {
-	TextureBackground = "ui.png" Part(180, 64, 90, 40) Middle(20, 0, 50, 40);
-	TextureFill       = "ui.png" Part(184, 108, 82, 32) Middle(16, 0, 50, 32);
+	TextureBackground = $grey_button05:5;
+	TextureFill       = $blue_button01:5;
 	TextColor         = rgb(190, 190, 190);
 	TextColorFilled   = rgb(250, 250, 250);
 }
 
 RadioButton {
-	TextureUnchecked        = "ui.png" Part(92, 32, 32, 32);
-	TextureChecked          = "ui.png" Part(124, 32, 32, 32);
-	TextureUncheckedHover   = "ui.png" Part(156, 32, 32, 32);
-	TextureCheckedHover     = "ui.png" Part(188, 32, 32, 32);
-	TextureUncheckedFocused = "ui.png" Part(220, 32, 32, 32);
-	TextureCheckedFocused   = "ui.png" Part(252, 32, 32, 32);
+	TextureUnchecked        = $grey_circle;
+	TextureChecked          = $blue_boxTick;
+	TextureUncheckedHover   = $grey_circle;
+	TextureCheckedHover     = $blue_boxTick;
+	TextureUncheckedFocused = $grey_circle;
+	TextureCheckedFocused   = $blue_boxTick;
 	TextColor               = rgb(190, 190, 190);
 	TextColorHover          = rgb(250, 250, 250);
 }
 
 Scrollbar {
-	TextureTrack          = "ui.png" Part(123, 154, 20, 20);
-	TextureTrackHover     = "ui.png" Part(123, 174, 20, 20);
-	TextureThumb          = "ui.png" Part(143, 154, 20, 20);
-	TextureThumbHover     = "ui.png" Part(143, 174, 20, 20);
-	TextureArrowUp        = "ui.png" Part(163, 154, 20, 20) Middle(0, 0, 20, 19);
-	TextureArrowUpHover   = "ui.png" Part(183, 154, 20, 20) Middle(0, 0, 20, 19);
-	TextureArrowDown      = "ui.png" Part(163, 174, 20, 20) Middle(0, 1, 20, 19);
-	TextureArrowDownHover = "ui.png" Part(183, 174, 20, 20) Middle(0, 1, 20, 19);
+	TextureTrack          = $grey_sliderVertical;
+	TextureTrackHover     = $grey_sliderVertical;
+	TextureThumb          = $blue_button07;
+	TextureThumbHover     = $blue_button08;
+	TextureArrowUp        = $blue_sliderUp;
+	TextureArrowUpHover   = $blue_sliderUp;
+	TextureArrowDown      = $blue_sliderDown;
+	TextureArrowDownHover = $blue_sliderDown;
 }
 
 Slider {
-	TextureTrack      = "ui.png" Part(203, 150, 20, 45) Middle(0, 15, 20, 15);
-	TextureTrackHover = "ui.png" Part(223, 150, 20, 45) Middle(0, 15, 20, 15);
-	TextureThumb      = "ui.png" Part(243, 150, 30, 30);
+	TextureTrack      = $grey_sliderHorizontal;
+	TextureTrackHover = $grey_sliderHorizontal;
+	TextureThumb      = $grey_sliderUp;
 }
 
 SpinButton {
-	TextureArrowUp        = "ui.png" Part(163, 154, 20, 20) Middle(0, 0, 20, 19);
-	TextureArrowUpHover   = "ui.png" Part(183, 154, 20, 20) Middle(0, 0, 20, 19);
-	TextureArrowDown      = "ui.png" Part(163, 174, 20, 20) Middle(0, 1, 20, 19);
-	TextureArrowDownHover = "ui.png" Part(183, 174, 20, 20) Middle(0, 1, 20, 19);
+	TextureArrowUp        = $grey_arrowUpGrey;
+	TextureArrowUpHover   = $grey_arrowUpWhite;
+	TextureArrowDown      = $grey_arrowDownGrey;
+	TextureArrowDownHover = $grey_arrowDownWhite;
 	BorderBetweenArrows    = 0;
 }
 
 Tabs {
-	TextureTab         = "ui.png" Part(0, 0, 60, 32) Middle(16, 0, 28, 32);
-	TextureSelectedTab = "ui.png" Part(0, 32, 60, 32) Middle(16, 0, 28, 32);
+	TextureTab         = $grey_button13;
+	TextureSelectedTab = $blue_button08;
 	TextColor          = rgb(190, 190, 190);
 	SelectedTextColor  = White;
 	DistanceToSide     = 8;
 }
 
 TextBox {
-	TextureBackground           = "ui.png" Part(0, 154, 48, 48) Middle(16, 16, 16, 16);
+	TextureBackground           = $grey_button06:10;
 	TextColor                   = rgb(190, 190, 190);
 	SelectedTextColor           = White;
 	SelectedTextBackgroundColor = rgb( 10, 110, 255);
